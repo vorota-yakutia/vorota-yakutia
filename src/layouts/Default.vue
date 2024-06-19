@@ -10,11 +10,11 @@
           <!-- TODO: You can add menu here -->
         </div>
         <div class="navbar-end flex flex-wrap justify-end space-x-4">
-          <a href="tel:+79539968084" class="flex items-center space-x-2 text-lg md:text-xl">
+          <a href="tel:+79142706573" class="flex items-center space-x-2 text-lg md:text-xl">
             <i class="la la-phone"></i>
-            <span>+7 953 996-80-84</span>
+            <span>+7 914 270-65-73</span>
           </a>
-          <a href="https://wa.me/79539968084" class="flex items-center space-x-2 text-lg md:text-xl">
+          <a href="https://wa.me/79142706573" class="flex items-center space-x-2 text-lg md:text-xl">
             <i class="la la-whatsapp"></i>
             <span>WhatsApp</span>
           </a>
