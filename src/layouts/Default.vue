@@ -1,40 +1,40 @@
 <template>
-  <div :data-theme="theme">
-    <div class="navbar fixed bg-base-100 z-40 shadow-sm">
-      <div class="navbar-start">
-        <a class="btn btn-ghost md:text-xl">Nuxtwind Daisy</a>
+  <div data-theme="lofi">
+      <div class="navbar fixed bg-base-100 z-40 shadow-sm">
+        <div class="navbar-start">
+          <a class="btn btn-ghost md:text-xl flex items-center">
+            <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
+          </a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <!-- TODO: You can add menu here -->
+        </div>
+        <div class="navbar-end flex flex-wrap justify-end space-x-4">
+          <a href="tel:+79539968084" class="flex items-center space-x-2 text-lg md:text-xl">
+            <i class="la la-phone"></i>
+            <span>+7 953 996-80-84</span>
+          </a>
+          <a href="https://wa.me/79539968084" class="flex items-center space-x-2 text-lg md:text-xl">
+            <i class="la la-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
       </div>
-      <div class="navbar-center hidden lg:flex">
-        <!-- TODO: You can add menu here -->
-      </div>
-      <div class="navbar-end">
-        <select v-model="theme" class="select select-primary md:w-full md:max-w-xs">
-          <option disabled selected>Select Theme</option>
-          <option v-for="theme in themes" :value="theme" :key="theme">
-            <span class="uppercase">{{ theme }}</span>
-          </option>
-        </select>
-      </div>
-    </div>
     <slot />
     <footer class="footer footer-center p-10 bg-base-50">
       <div>
-        <h1 class="text-2xl md:text-3xl font-bold">Nuxtwind Daisy</h1>
+        <a class="btn btn-ghost md:text-xl flex items-center">
+          <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
+        </a>
         <p class="md:font-bold">
-          Create beautiful and fast websites without the tedious setup
+          ООО компани нейм ИНН 213123213123
         </p>
-        <p>Copyright © {{new Date().getFullYear()}} - All right reserved</p>
+        <p>Алютех. Ворота Якутии © {{new Date().getFullYear()}}</p>
       </div>
       <div>
         <div class="grid grid-flow-col gap-4">
-          <a href="https://twitter.com/jrtiquez" target="_blank">
-            <i class="lab la-twitter text-4xl"></i>
-          </a>
-          <a href="https://github.com/ossphilippines/nuxtwind-daisy" target="_blank">
-            <i class="lab la-github text-4xl"></i>
-          </a>
-          <a href="https://facebook.com/ossph.org" target="_blank">
-            <i class="lab la-facebook text-4xl"></i>
+          <a href="https://www.instagram.com/alutech_gate_ykt" target="_blank">
+            <i class="lab la-instagram text-4xl"></i>
           </a>
         </div>
       </div>

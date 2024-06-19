@@ -41,6 +41,17 @@ export default defineNuxtConfig({
           rel: 'stylesheet',
           href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css',
         },
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/favicon.ico',
+        },
+      ],
+      script: [
+        {
+          src: 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',
+          type: 'text/javascript',
+        },
       ],
     },
   },

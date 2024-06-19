@@ -9,6 +9,9 @@ module.exports = {
       fontFamily: {
         primary: ['Inter'],
       },
+      backgroundImage: {
+        'hero-pattern': "url('/assets/images/vorota-photoaidcom-darken.jpg')",
+      },
     },
   },
   daisyui: {
