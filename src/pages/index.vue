@@ -3,7 +3,7 @@
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 data-aos="zoom-out" class="text-4xl text-white md:text-7xl font-bold mb-6">
+        <h1 data-aos="zoom-out" class="text-4xl text-white md:text-5xl font-bold mb-6">
           Установка ворот в Якутске
         </h1>
         <p
