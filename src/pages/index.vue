@@ -50,24 +50,7 @@
   </div>
   <generic-panel>
     <div id="price-section" class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl mb-5">Получить расчет цены</h1>
-      <div class="mb-4">
-        <h2 class="mb-2">Выберите бренд</h2>
-        <div class="flex flex-col space-y-2">
-          <label class="flex items-center">
-            <input type="radio" name="brand" value="ALUTECH" class="radio radio-primary" checked/>
-            <span class="ml-2">Мне нужен расчет ворот ALUTECH</span>
-          </label>
-          <label class="flex items-center">
-            <input type="radio" name="brand" value="DoorHan" class="radio radio-primary"/>
-            <span class="ml-2">Мне нужен расчет ворот DoorHan</span>
-          </label>
-          <label class="flex items-center">
-            <input type="radio" name="brand" value="both" class="radio radio-primary"/>
-            <span class="ml-2">Рассмотрю оба варианта</span>
-          </label>
-        </div>
-      </div>
+      <h1 class="text-3xl mb-5">Получить расчет цены на расчет ворот ALUTECH</h1>
 
       <div class="mb-4">
         <h2 class="mb-2">Монтажные работы</h2>
