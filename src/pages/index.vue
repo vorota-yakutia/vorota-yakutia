@@ -116,7 +116,7 @@ import { ref, onMounted } from 'vue';
 import { useHead } from '#app';
 import { definePageMeta } from '#imports';
 import GenericPanel from '~/components/commons/GenericPanel';
-import ogBanner from '../assets/images/nuxtwind-daisy-og-banner.jpg';
+import ogBanner from '../assets/images/logo.png';
 
 export default {
   components: {
@@ -129,7 +129,9 @@ export default {
 
     useHead({
       title: 'Ворота Якутск',
-      description: 'Nuxtwind Daisy is a starter template for Nuxt.js 3 + Tailwind CSS + Daisy UI with additional installed setup for custom font, icons, animation, and more.',
+      description: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование. «АЛЮТЕХ» предлагает\n' +
+          '          продукцию как бытового, так и промышленного назначения. Все изделия проходят многоступенчатый контроль\n' +
+          '          качества.',
       link: [
         {
           rel: 'icon',
