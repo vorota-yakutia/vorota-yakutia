@@ -44,7 +44,16 @@
     </generic-panel>
     <div class="carousel w-full space-x-4">
       <div v-for="image in images" :key="image" class="carousel-item">
-        <img :src="`/vorota/${image}.jpeg`" class="rounded-box max-w-full h-96 object-cover"/>
+        <nuxt-img
+            :src="`/vorota/${image}.jpeg`"
+            class="rounded-box max-w-full h-96 object-cover"
+            :sizes="imageSizes"
+            format="webp"
+            fit="cover"
+            loading="lazy"
+            :alt="`Наша работа ${image}`"
+            :placeholder="[10, 10, 75]"
+        />
       </div>
     </div>
   </div>
@@ -183,8 +192,17 @@ export default {
 
     const images = ref(Array.from({ length: 40 }, (_, i) => i + 1));
 
+    const imageSizes = computed(() => ({
+      sm: '100vw',
+      md: '50vw',
+      lg: '400px',
+      xl: '500px',
+      '2xl': '600px',
+    }));
+
     return {
       images,
+      imageSizes,
     };
   },
 };

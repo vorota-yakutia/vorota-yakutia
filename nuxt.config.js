@@ -126,10 +126,7 @@ export default defineNuxtConfig({
   },
 
   image: {
-    domains: [
-      'avatars0.githubusercontent.com'
-    ],
-    dir: 'assets/images',
+    provider: 'vercel',
     screens: {
       xs: 320,
       sm: 640,
@@ -138,8 +135,10 @@ export default defineNuxtConfig({
       xl: 1280,
       xxl: 1536,
       '2xl': 1536,
-      '3xl': 1920,
     },
+    domains: [
+      'www.vorota-yakutia.ru' // Добавьте здесь домен вашего сайта
+    ]
   },
 
   devtools: {
