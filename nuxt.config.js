@@ -43,7 +43,12 @@ export default defineNuxtConfig({
   robots: {
     UserAgent: '*',
     Allow: '/',
-    Sitemap: 'https://www.vorota-yakutia.ru/sitemap.xml',
+    Disallow: ['/admin', '/tmp', '/private'],
+    Sitemap: (req) => `https://${req.headers.host}/sitemap.xml`,
+    BlankLine: true,
+    Comment: 'Правила для всех поисковых роботов',
+    CrawlDelay: 10,
+    CleanParam: 'ref /articles/',
   },
 
   gtag: {
