@@ -16,18 +16,35 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
 
+  site: {
+    url: 'https://www.vorota-yakutia.ru',
+  },
+
   sitemap: {
-    hostname: 'https://www.vorota-yakutia.ru',
-    gzip: true,
-    routes: ['/']
+    // Используем функцию для динамической генерации конфигурации
+    // Это позволяет нам использовать значения из site.url
+    configFunction: ({ sitemap, nuxtConfig }) => {
+      sitemap.hostname = nuxtConfig.site.url;
+      sitemap.gzip = true; // Создаем сжатую версию sitemap
+      sitemap.lastmod = new Date(); // Устанавливаем дату последнего изменения
+      sitemap.exclude = ['/admin/**']; // Исключаем административные страницы, если они есть
+
+      // Добавляем только главную страницу, так как это одностраничный сайт
+      sitemap.routes = [
+        {
+          url: '/',
+          changefreq: 'daily',
+          priority: 1,
+        },
+      ];
+    },
   },
 
   robots: {
     UserAgent: '*',
     Allow: '/',
-    Sitemap: 'https://www.vorota-yakutia.ru/sitemap.xml'
+    Sitemap: 'https://www.vorota-yakutia.ru/sitemap.xml',
   },
-
 
   gtag: {
     id: 'G-M1KERXTK1H', // TODO: Add your google analytics 4 tag here
@@ -47,7 +64,7 @@ export default defineNuxtConfig({
       ssr: false,
       mode: 'client',
     },
-    '~/plugins/jsonld'
+    '~/plugins/jsonld',
   ],
 
   app: {
@@ -99,8 +116,8 @@ export default defineNuxtConfig({
         removeEmptyAttributes: true,
         removeRedundantAttributes: true,
         trimCustomFragments: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     },
     extend (config, ctx) {
       config.resolve.symlinks = false;
