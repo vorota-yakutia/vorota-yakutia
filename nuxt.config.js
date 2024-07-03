@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-headlessui',
     'nuxt-gtag',
+    '@nuxt/image',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
   ],
@@ -43,12 +44,7 @@ export default defineNuxtConfig({
   robots: {
     UserAgent: '*',
     Allow: '/',
-    Disallow: ['/admin', '/tmp', '/private'],
     Sitemap: 'https://www.vorota-yakutia.ru/sitemap.xml',
-    BlankLine: true,
-    Comment: 'Правила для всех поисковых роботов',
-    CrawlDelay: 10,
-    CleanParam: 'ref /articles/',
   },
 
   gtag: {
@@ -130,6 +126,9 @@ export default defineNuxtConfig({
   },
 
   image: {
+    domains: [
+      'avatars0.githubusercontent.com'
+    ],
     dir: 'assets/images',
     screens: {
       xs: 320,
