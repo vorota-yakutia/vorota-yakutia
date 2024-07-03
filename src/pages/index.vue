@@ -110,24 +110,60 @@ export default {
       layout: 'default',
     });
 
+    const siteName = 'Алютех - Ворота Якутск';
+    const siteUrl = 'https://www.vorota-yakutia.ru';
+
     useHead({
-      title: 'Ворота Якутск',
-      description: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование. «АЛЮТЕХ» предлагает\n' +
-          '          продукцию как бытового, так и промышленного назначения. Все изделия проходят многоступенчатый контроль\n' +
-          '          качества.',
-      link: [
-        {
-          rel: 'icon',
-          type: 'image/png',
-          href: '/favicon.png',
-        },
-      ],
+      htmlAttrs: {
+        lang: 'ru',
+      },
+      title: 'Ворота Якутск - Автоматические ворота и роллетные системы',
+      titleTemplate: '%s | ' + siteName,
       meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
-          hid: 'og:image',
-          name: 'og:image',
-          property: 'og:image',
-          content: ogBanner,
+          hid: 'description',
+          name: 'description',
+          content: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование. «АЛЮТЕХ» предлагает продукцию как бытового, так и промышленного назначения. Все изделия проходят многоступенчатый контроль качества.',
+        },
+        { name: 'format-detection', content: 'telephone=no' },
+        // Open Graph / Facebook
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: siteUrl },
+        { property: 'og:title', content: 'Ворота Якутск - Автоматические ворота и роллетные системы' },
+        { property: 'og:description', content: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование от АЛЮТЕХ в Якутске.' },
+        { property: 'og:image', content: ogBanner },
+        // Twitter
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:url', content: siteUrl },
+        { name: 'twitter:title', content: 'Ворота Якутск - Автоматические ворота и роллетные системы' },
+        { name: 'twitter:description', content: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование от АЛЮТЕХ в Якутске.' },
+        { name: 'twitter:image', content: ogBanner },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'canonical', href: siteUrl },
+      ],
+      script: [
+        {
+          type: 'application/ld+json',
+          children: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'LocalBusiness',
+            name: 'Алютех - Ворота Якутск',
+            image: `${siteUrl}/assets/images/logo.png`,
+            telephone: '+79142706573',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'Якутск',
+              addressRegion: 'Республика Саха (Якутия)',
+              addressCountry: 'RU',
+            },
+            url: siteUrl,
+            priceRange: '₽₽₽',
+            description: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование в Якутске.',
+          }),
         },
       ],
     });
