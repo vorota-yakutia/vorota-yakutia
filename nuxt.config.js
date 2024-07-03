@@ -12,6 +12,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     'nuxt-headlessui',
     'nuxt-gtag',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
   ],
 
   gtag: {
