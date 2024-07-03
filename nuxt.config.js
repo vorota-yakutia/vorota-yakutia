@@ -17,11 +17,9 @@ export default defineNuxtConfig({
   ],
 
   sitemap: {
-    hostname: 'https://www.vorota-yakutia.ru/',
+    hostname: 'https://www.vorota-yakutia.ru',
     gzip: true,
-    exclude: [
-      '/admin/**'
-    ]
+    routes: ['/']
   },
 
   robots: {
