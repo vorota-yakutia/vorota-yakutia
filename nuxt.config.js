@@ -49,6 +49,7 @@ export default defineNuxtConfig({
       ssr: false,
       mode: 'client',
     },
+    '~/plugins/jsonld'
   ],
 
   app: {
