@@ -39,11 +39,13 @@
         </div>
       </div>
     </footer>
+    <SpeedInsights />
   </div>
 </template>
 
 <script>
 import { ref, watch, onMounted } from 'vue';
+import { SpeedInsights } from "@vercel/speed-insights/nuxt";
 const THEMES = [
   'light',
   'dark',
@@ -76,6 +78,9 @@ const THEMES = [
   'winter',
 ];
 export default {
+  components: {
+    SpeedInsights,
+  },
   setup () {
     const theme = ref(null);
     watch(theme, (value) => {
