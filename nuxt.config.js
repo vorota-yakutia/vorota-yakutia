@@ -16,6 +16,21 @@ export default defineNuxtConfig({
     '@nuxtjs/sitemap',
   ],
 
+  sitemap: {
+    hostname: 'https://www.vorota-yakutia.ru/',
+    gzip: true,
+    exclude: [
+      '/admin/**'
+    ]
+  },
+
+  robots: {
+    UserAgent: '*',
+    Allow: '/',
+    Sitemap: 'https://www.vorota-yakutia.ru/sitemap.xml'
+  },
+
+
   gtag: {
     id: 'G-M1KERXTK1H', // TODO: Add your google analytics 4 tag here
   },
@@ -73,6 +88,21 @@ export default defineNuxtConfig({
   },
 
   build: {
+    optimizeCSS: true,
+    optimizeJS: true,
+    html: {
+      minify: {
+        collapseBooleanAttributes: true,
+        decodeEntities: true,
+        minifyCSS: true,
+        minifyJS: true,
+        processConditionalComments: true,
+        removeEmptyAttributes: true,
+        removeRedundantAttributes: true,
+        trimCustomFragments: true,
+        useShortDoctype: true
+      }
+    },
     extend (config, ctx) {
       config.resolve.symlinks = false;
     },
