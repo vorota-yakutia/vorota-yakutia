@@ -27,7 +27,7 @@
           <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
         </a>
         <p class="md:font-bold">
-          ООО компани нейм ИНН 213123213123
+          Услуги оказываются ИП Павлов Е. Е. ИНН 143516824206
         </p>
         <p>Алютех. Ворота Якутии © {{new Date().getFullYear()}}</p>
       </div>
