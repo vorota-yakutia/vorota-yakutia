@@ -31,16 +31,15 @@
     <div class="carousel w-full space-x-4">
       <div v-for="image in visibleImages" :key="image" class="carousel-item">
         <nuxt-img
-            :src="`/vorota/${image}.jpeg`"
+            :src="`/vorota/${image}.jpg`"
             class="rounded-box max-w-full h-96 object-cover"
             :sizes="imageSizes"
             format="webp"
             fit="cover"
             loading="lazy"
             :alt="`Реализованный проект ${image}`"
-            :placeholder="[10, 10, 75]"
+            placeholder
             quality="80"
-            preload
         />
       </div>
     </div>
