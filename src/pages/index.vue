@@ -4,16 +4,14 @@
     <div class="hero-content text-center">
       <div class="max-w-xl">
         <h1 data-aos="zoom-out" class="text-4xl text-white md:text-5xl font-bold mb-6">
-          Установка ворот в Якутске
+          Профессиональный монтаж ворот в Якутске
         </h1>
         <p
             data-aos="fade-down"
             data-aos-delay="300"
             class="text-white md:text-lg mb-6"
         >
-          Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование. «АЛЮТЕХ» предлагает
-          продукцию как бытового, так и промышленного назначения. Все изделия проходят многоступенчатый контроль
-          качества.
+          Эксперты в установке автоматических ворот, роллетных конструкций, шлагбаумов и погрузочно-разгрузочного оборудования. Компания «АЛЮТЕХ» - ваш надежный партнер в сфере бытовых и промышленных решений. Гарантируем безупречное качество каждого изделия благодаря тщательной проверке на всех этапах производства.
         </p>
         <div class="flex justify-center space-x-5">
           <a
@@ -22,7 +20,7 @@
               class="btn btn-sm md:btn-md btn-primary"
               href="#price-section"
           >
-            Получить прайс
+            Узнать стоимость
           </a>
           <a
               data-aos="fade-down"
@@ -30,7 +28,7 @@
               class="btn btn-sm md:btn-md bg-base-100"
               href="#works-section"
           >
-            Наши работы
+            Портфолио проектов
           </a>
         </div>
       </div>
@@ -39,7 +37,7 @@
   <div id="works-section">
     <generic-panel>
       <div class="flex flex-col p-6">
-        <h1 class="text-3xl md:text-3xl mb-5">Наши работы</h1>
+        <h1 class="text-3xl md:text-3xl mb-5">Галерея выполненных проектов</h1>
       </div>
     </generic-panel>
     <div class="carousel w-full space-x-4">
@@ -51,7 +49,7 @@
             format="webp"
             fit="cover"
             loading="lazy"
-            :alt="`Наша работа ${image}`"
+            :alt="`Реализованный проект ${image}`"
             :placeholder="[10, 10, 75]"
         />
       </div>
@@ -59,44 +57,44 @@
   </div>
   <generic-panel>
     <div id="price-section" class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl mb-5">Получить расчет цены на расчет ворот ALUTECH</h1>
+      <h1 class="text-3xl mb-5">Рассчитать стоимость монтажа ворот ALUTECH</h1>
 
       <div class="mb-4">
-        <h2 class="mb-2">Монтажные работы</h2>
+        <h2 class="mb-2">Услуги по установке</h2>
         <div class="flex flex-col space-y-2">
           <label class="flex items-center">
             <input type="radio" name="installation" value="yes" class="radio radio-primary" checked/>
-            <span class="ml-2">Интересует цена на монтаж</span>
+            <span class="ml-2">Нужен расчет стоимости монтажа</span>
           </label>
           <label class="flex items-center">
             <input type="radio" name="installation" value="no" class="radio radio-primary"/>
-            <span class="ml-2">Монтаж не нужен</span>
+            <span class="ml-2">Только поставка, без монтажа</span>
           </label>
         </div>
       </div>
 
       <div class="mb-4">
-        <label for="phone" class="block mb-2">Номер телефона *</label>
+        <label for="phone" class="block mb-2">Контактный телефон *</label>
         <input type="tel" id="phone" name="phone" class="input input-bordered w-full" required/>
       </div>
 
       <div class="mb-4">
-        <label for="comment" class="block mb-2">Комментарий (если нужно)</label>
+        <label for="comment" class="block mb-2">Дополнительная информация</label>
         <textarea id="comment" name="comment" class="textarea textarea-bordered w-full"></textarea>
       </div>
 
       <div class="mb-4 flex items-center">
         <input type="checkbox" id="agreement" name="agreement" class="checkbox checkbox-primary" required/>
-        <label for="agreement" class="ml-2">Даю согласие на обработку персональных данных</label>
+        <label for="agreement" class="ml-2">Я согласен на обработку личных данных</label>
       </div>
 
-      <button type="submit" class="btn btn-primary">Отправить</button>
+      <button type="submit" class="btn btn-primary">Отправить заявку</button>
     </div>
   </generic-panel>
 
   <generic-panel>
     <div class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl mb-5">Как нас найти?</h1>
+      <h1 class="text-3xl mb-5">Наше расположение</h1>
       <div id="map" class="w-full h-64"></div>
     </div>
   </generic-panel>
@@ -119,14 +117,14 @@ export default {
       layout: 'default',
     });
 
-    const siteName = 'Алютех - Ворота Якутск';
+    const siteName = 'Официальный представитель АЛЮТЕХ в Якутске';
     const siteUrl = 'https://www.vorota-yakutia.ru';
 
     useHead({
       htmlAttrs: {
         lang: 'ru',
       },
-      title: 'Ворота Якутск - Автоматические ворота и роллетные системы',
+      title: 'Ворота в Якутске - Инновационные решения для вашего комфорта',
       titleTemplate: '%s | ' + siteName,
       meta: [
         { charset: 'utf-8' },
@@ -134,20 +132,20 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование. «АЛЮТЕХ» предлагает продукцию как бытового, так и промышленного назначения. Все изделия проходят многоступенчатый контроль качества.',
+          content: 'Ведущий поставщик автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования в Якутске. «АЛЮТЕХ» - гарант качества и инноваций для бытового и промышленного применения.',
         },
         { name: 'format-detection', content: 'telephone=no' },
         // Open Graph / Facebook
         { property: 'og:type', content: 'website' },
         { property: 'og:url', content: siteUrl },
-        { property: 'og:title', content: 'Ворота Якутск - Автоматические ворота и роллетные системы' },
-        { property: 'og:description', content: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование от АЛЮТЕХ в Якутске.' },
+        { property: 'og:title', content: 'Ворота в Якутске - Инновационные решения для вашего комфорта' },
+        { property: 'og:description', content: 'Профессиональная установка автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования от АЛЮТЕХ в Якутске. Качество, проверенное временем.' },
         { property: 'og:image', content: ogBanner },
         // Twitter
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:url', content: siteUrl },
-        { name: 'twitter:title', content: 'Ворота Якутск - Автоматические ворота и роллетные системы' },
-        { name: 'twitter:description', content: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование от АЛЮТЕХ в Якутске.' },
+        { name: 'twitter:title', content: 'Ворота в Якутске - Инновационные решения для вашего комфорта' },
+        { name: 'twitter:description', content: 'Профессиональная установка автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования от АЛЮТЕХ в Якутске. Качество, проверенное временем.' },
         { name: 'twitter:image', content: ogBanner },
       ],
       link: [
@@ -160,7 +158,7 @@ export default {
           children: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'LocalBusiness',
-            name: 'Алютех - Ворота Якутск',
+            name: 'Официальный представитель АЛЮТЕХ в Якутске',
             image: `${siteUrl}/assets/images/logo.png`,
             telephone: '+79142706573',
             address: {
@@ -171,7 +169,7 @@ export default {
             },
             url: siteUrl,
             priceRange: '₽₽₽',
-            description: 'Автоматические ворота, роллетные системы, шлагбаумы и перегрузочное оборудование в Якутске.',
+            description: 'Профессиональная установка и обслуживание автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования в Якутске.',
           }),
         },
       ],
