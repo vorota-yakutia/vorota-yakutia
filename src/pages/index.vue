@@ -174,21 +174,25 @@ let imageObserver;
 
 onMounted(() => {
   // Lazy load the map
-  const mapObserver = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      DG.then(() => {
-        const map = DG.map('map', {
-          center: [62.057323, 129.735834],
-          zoom: 14.3,
-        });
-        DG.marker([62.057323, 129.735834]).addTo(map).bindLabel('Алютех', {
-          static: true,
-        });
-      });
-      mapObserver.disconnect();
-    }
-  });
-  mapObserver.observe(document.getElementById('map'));
+  if (process.client) {
+    const mapObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        if (typeof DG !== 'undefined') {
+          DG.then(() => {
+            const map = DG.map('map', {
+              center: [62.057323, 129.735834],
+              zoom: 14.3,
+            });
+            DG.marker([62.057323, 129.735834]).addTo(map).bindLabel('Алютех', {
+              static: true,
+            });
+          });
+        }
+        mapObserver.disconnect();
+      }
+    });
+    mapObserver.observe(document.getElementById('map'));
+  }
 
   // Setup image loading observer
   imageObserver = new IntersectionObserver((entries) => {

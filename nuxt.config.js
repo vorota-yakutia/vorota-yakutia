@@ -24,7 +24,10 @@ export default defineNuxtConfig({
   sitemap: {
     // Используем функцию для динамической генерации конфигурации
     // Это позволяет нам использовать значения из site.url
-    configFunction: ({ sitemap, nuxtConfig }) => {
+    configFunction: ({
+      sitemap,
+      nuxtConfig,
+    }) => {
       sitemap.hostname = nuxtConfig.site.url;
       sitemap.gzip = true; // Создаем сжатую версию sitemap
       sitemap.lastmod = new Date(); // Устанавливаем дату последнего изменения
@@ -71,20 +74,46 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        // Предзагрузка CSS файла
         {
-          rel: 'stylesheet',
+          rel: 'preload',
+          as: 'style',
           href: 'https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css',
+          onload: 'this.onload=null;this.rel=\'stylesheet\'',
         },
+        // Фавикон
         {
           rel: 'icon',
           type: 'image/x-icon',
           href: '/favicon.ico',
         },
+        // Предварительное соединение с доменом 2GIS
+        {
+          rel: 'preconnect',
+          href: 'https://maps.api.2gis.ru',
+        },
       ],
       script: [
+        // Асинхронная загрузка скрипта 2GIS
         {
           src: 'https://maps.api.2gis.ru/2.0/loader.js?pkg=full',
-          type: 'text/javascript',
+          async: true,
+          defer: true,
+        },
+      ],
+      // Добавление критических стилей inline
+      style: [
+        {
+          children: `
+            /* Вставьте сюда критические стили из line-awesome.min.css */
+            /* Например: */
+            .la {
+              font-family: 'Line Awesome Free';
+              font-weight: 400;
+            }
+            /* Добавьте другие критические стили по необходимости */
+          `,
+          type: 'text/css',
         },
       ],
     },
@@ -137,8 +166,8 @@ export default defineNuxtConfig({
       '2xl': 1536,
     },
     domains: [
-      'www.vorota-yakutia.ru' // Добавьте здесь домен вашего сайта
-    ]
+      'www.vorota-yakutia.ru', // Добавьте здесь домен вашего сайта
+    ],
   },
 
   devtools: {
