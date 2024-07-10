@@ -3,7 +3,9 @@
       <div class="navbar fixed bg-base-100 z-40 shadow-sm">
         <div class="navbar-start">
           <a class="btn btn-ghost md:text-xl flex items-center">
-            <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
+            <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost md:text-xl flex items-center cursor-pointer">
+              <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
+            </NuxtLink>
           </a>
         </div>
         <div class="navbar-center hidden lg:flex">
@@ -45,7 +47,7 @@
 
 <script>
 import { ref, watch, onMounted } from 'vue';
-import { SpeedInsights } from "@vercel/speed-insights/nuxt";
+import { SpeedInsights } from '@vercel/speed-insights/nuxt';
 const THEMES = [
   'light',
   'dark',
