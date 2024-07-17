@@ -3,12 +3,11 @@
     <div class="hero-content text-center">
       <div class="max-w-xl">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
-          Алютех - Ворота Якутска и Якутии
+          Алютех - Ворота в Якутске
         </h1>
         <p class="text-white md:text-lg mb-6">
-          Эксперты в установке автоматических ворот, роллетных конструкций, шлагбаумов и погрузочно-разгрузочного
-          оборудования в Якутске и по всей Якутии. Компания «АЛЮТЕХ» - ваш надежный партнер в сфере бытовых и промышленных решений. Гарантируем
-          безупречное качество каждого изделия благодаря тщательной проверке на всех этапах производства.
+          Эксперты в установке автоматических ворот, роллетных конструкций и шлагбаумов в Якутске. Компания «АЛЮТЕХ» -
+          ваш надежный партнер в сфере бытовых и промышленных решений.
         </p>
         <div class="flex justify-center space-x-5">
           <a class="btn btn-sm md:btn-md btn-primary" href="#price-section">
@@ -106,15 +105,14 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue';
 import { useServerSeoMeta, useSeoMeta, useHead } from '#imports';
 import GenericPanel from '~/components/commons/GenericPanel';
 import ogBanner from '../assets/images/logo.png';
 
-const siteName = 'Алютех - Ворота Якутии';
+const siteName = 'Алютех - Ворота в Якутске и Якутии';
 const siteUrl = 'https://www.vorota-yakutia.ru';
-const pageTitle = 'Ворота Якутск | Алютех - Ворота Якутии';
-const pageDescription = 'Алютех - ведущий поставщик и установщик ворот в Якутске и Якутии. Автоматические ворота, роллетные системы, шлагбаумы от официального представителя. Качество и надежность для вашего дома и бизнеса.';
+const pageTitle = 'Автоматические ворота в Якутске и Якутии | Алютех';
+const pageDescription = 'Алютех - ведущий поставщик и установщик автоматических ворот, роллетных систем и шлагбаумов в Якутске и Республике Саха (Якутия). Официальный представитель с гарантией качества.';
 
 useServerSeoMeta({
   title: () => `${pageTitle} | ${siteName}`,
@@ -128,6 +126,7 @@ useServerSeoMeta({
   twitterDescription: pageDescription,
   twitterImage: ogBanner,
 });
+
 useSeoMeta({
   charset: 'utf-8',
   viewport: 'width=device-width, initial-scale=1',
@@ -139,8 +138,15 @@ useHead({
     lang: 'ru',
   },
   link: [
-    { rel: 'icon', type: 'image/png', href: '/favicon.png' },
-    { rel: 'canonical', href: siteUrl },
+    {
+      rel: 'icon',
+      type: 'image/png',
+      href: '/favicon.png',
+    },
+    {
+      rel: 'canonical',
+      href: siteUrl,
+    },
   ],
   script: [
     {
@@ -148,7 +154,7 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
-        name: 'Алютех - Ворота Якутии',
+        name: 'Алютех - Ворота в Якутске и Якутии',
         image: `${siteUrl}/assets/images/logo.png`,
         telephone: '+79142706573',
         address: {
@@ -157,9 +163,19 @@ useHead({
           addressRegion: 'Республика Саха (Якутия)',
           addressCountry: 'RU',
         },
+        areaServed: [
+          {
+            '@type': 'City',
+            name: 'Якутск',
+          },
+          {
+            '@type': 'State',
+            name: 'Республика Саха (Якутия)',
+          },
+        ],
         url: siteUrl,
         priceRange: '₽₽₽',
-        description: 'Профессиональная установка и обслуживание автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования в Якутске и Якутии. Официальный представитель Алютех.',
+        description: 'Профессиональная установка и обслуживание автоматических ворот, роллетных систем и шлагбаумов в Якутске и по всей Республике Саха (Якутия). Официальный представитель Алютех.',
       }),
     },
   ],
