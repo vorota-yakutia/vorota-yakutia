@@ -1,47 +1,68 @@
 <template>
   <div data-theme="lofi">
-      <div class="navbar fixed bg-base-100 z-40 shadow-sm">
-        <div class="navbar-start">
-          <a class="btn btn-ghost md:text-xl flex items-center">
-            <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost md:text-xl flex items-center cursor-pointer">
-              <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
-            </NuxtLink>
-          </a>
-        </div>
-        <div class="navbar-center hidden lg:flex">
-          <!-- TODO: You can add menu here -->
-        </div>
-        <div class="navbar-end flex flex-wrap justify-end space-x-4">
-          <a href="tel:+79142706573" class="flex items-center space-x-2 text-lg md:text-xl">
-            <i class="la la-phone"></i>
-            <span>+7 914 270-65-73</span>
-          </a>
-          <a href="https://wa.me/79142706573" class="flex items-center space-x-2 text-lg md:text-xl">
-            <i class="la la-whatsapp"></i>
-            <span>WhatsApp</span>
-          </a>
-        </div>
+    <header class="navbar fixed bg-base-100 z-40 shadow-sm px-4">
+      <div class="navbar-start">
+        <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost p-0 md:text-xl flex items-center cursor-pointer">
+          <img src="~/assets/images/logo.png" alt="Алютех" class="h-10 w-auto">
+        </NuxtLink>
       </div>
-    <slot />
-    <footer class="footer footer-center p-10 bg-base-50">
-      <div>
-        <a class="btn btn-ghost md:text-xl flex items-center">
-          <img src="~/assets/images/logo.png" alt="Алютех" class="h-8 w-auto">
+      <div class="navbar-end flex items-center space-x-2 md:space-x-4">
+        <a href="tel:+79142706573" class="btn btn-outline btn-primary btn-sm md:btn-md animate-pulse">
+          <i class="las la-phone text-lg md:text-xl mr-1"></i>
+          <span class="hidden md:inline">Позвонить</span>
         </a>
-        <p class="md:font-bold">
-          Услуги оказываются ИП Павлов Е. Е. ИНН 143516824206
-        </p>
-        <p>Алютех. Ворота Якутии © {{new Date().getFullYear()}}</p>
+        <a href="https://wa.me/79142706573" class="btn btn-success btn-sm md:btn-md shadow-lg hover:shadow-green-500/50 transition-all duration-300">
+          <i class="lab la-whatsapp text-lg md:text-xl mr-1"></i>
+          <span class="hidden md:inline">WhatsApp</span>
+        </a>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="footer p-10 bg-base-200 text-base-content">
+      <div>
+        <img src="~/assets/images/logo.png" alt="Алютех" class="h-12 w-auto mb-4">
+        <p class="max-w-xs">Ваш надежный партнер в установке и обслуживании автоматических ворот, роллетных систем и шлагбаумов в Якутске и Якутии.</p>
       </div>
       <div>
-        <div class="grid grid-flow-col gap-4">
-          <a href="https://www.instagram.com/alutech_gate_ykt" target="_blank">
-            <i class="lab la-instagram text-4xl"></i>
-          </a>
-        </div>
+        <span class="footer-title">Услуги</span>
+        <a class="link link-hover">Автоматические ворота</a>
+        <a class="link link-hover">Роллетные системы</a>
+        <a class="link link-hover">Шлагбаумы</a>
+        <a class="link link-hover">Сервисное обслуживание</a>
+      </div>
+      <div>
+        <span class="footer-title">Контакты</span>
+        <a href="tel:+79142706573" class="link link-hover flex items-center">
+          <i class="las la-phone mr-2"></i>+7 914 270-65-73
+        </a>
+        <a href="https://wa.me/79142706573" class="link link-hover flex items-center">
+          <i class="lab la-whatsapp mr-2"></i>WhatsApp
+        </a>
+        <a href="mailto:info@vorota-yakutia.ru" class="link link-hover flex items-center">
+          <i class="las la-envelope mr-2"></i>paeg1@yandex.ru
+        </a>
+        <p class="flex items-center">
+          <i class="las la-map-marker mr-2"></i>г. Якутск, ул. Халтурина, 22/1Б
+        </p>
       </div>
     </footer>
-    <SpeedInsights />
+    <footer class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+      <div class="items-center grid-flow-col">
+        <p>ИП Павлов Е. Е. ИНН 143516824206 <br/>© {{new Date().getFullYear()}} Алютех. Ворота Якутии. Все права защищены.</p>
+      </div>
+      <div class="md:place-self-center md:justify-self-end">
+        <div class="grid grid-flow-col gap-4">
+          <a href="https://www.instagram.com/alutech_gate_ykt" target="_blank" aria-label="Instagram" class="btn btn-ghost btn-circle">
+            <i class="lab la-instagram text-2xl"></i>
+          </a>
+          <a href="https://wa.me/79142706573" target="_blank" aria-label="WhatsApp" class="btn btn-ghost btn-circle">
+            <i class="lab la-whatsapp text-2xl"></i>
+          </a>
+        </div>
+      </div>
+    </footer>    <SpeedInsights />
   </div>
 </template>
 
@@ -98,3 +119,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px #4ade80, 0 0 10px #4ade80; }
+  50% { box-shadow: 0 0 20px #4ade80, 0 0 30px #4ade80; }
+}
+
+.btn-success {
+  animation: glow 2s infinite;
+}
+</style>

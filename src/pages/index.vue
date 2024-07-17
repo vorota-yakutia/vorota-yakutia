@@ -87,12 +87,22 @@
     </div>
   </generic-panel>
 
-  <footer class="bg-gray-800 text-white py-8">
-    <div class="container mx-auto text-center">
-      <p class="mb-4">Алютех - ведущий поставщик ворот в Якутске и Якутии. Мы предлагаем широкий ассортимент автоматических ворот, роллетных систем и шлагбаумов для жилых и коммерческих объектов.</p>
-      <p>© 2024 Алютех - Ворота Якутии. Все права защищены.</p>
+  <generic-panel>
+    <div class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
+      <h2 class="text-3xl mb-5">Сертификат</h2>
+      <nuxt-img
+          :src="`/sertificat.webp`"
+          class="rounded-box max-w-full h-96 object-cover"
+          :sizes="imageSizes"
+          format="webp"
+          fit="cover"
+          loading="lazy"
+          :alt="`Сертификат Алютех`"
+          placeholder
+          quality="80"
+      />
     </div>
-  </footer>
+  </generic-panel>
 </template>
 
 <script setup>
