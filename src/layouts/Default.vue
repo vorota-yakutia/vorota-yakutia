@@ -11,7 +11,7 @@
     <slot />
 
     <!-- Floating contact buttons -->
-    <div class="fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
+    <div class="fixed bottom-16 right-8 flex flex-col space-y-4 z-50">
       <a href="tel:+79142706573" class="btn btn-circle btn-primary btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="Позвонить">
         <i class="las la-phone text-2xl"></i>
       </a>
@@ -145,8 +145,8 @@ export default {
     height: 3.5rem;
   }
 
-  .fixed.bottom-8.right-8 {
-    bottom: 1rem;
+  .fixed.bottom-16.right-8 {
+    bottom: 4rem;
     right: 1rem;
   }
 }
