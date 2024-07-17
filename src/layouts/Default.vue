@@ -11,12 +11,12 @@
     <slot />
 
     <!-- Floating contact buttons -->
-    <div class="fixed bottom-4 right-4 flex flex-col space-y-2 z-50">
-      <a href="tel:+79142706573" class="btn btn-circle btn-primary btn-md lg:btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="Позвонить">
-        <i class="las la-phone text-xl lg:text-2xl"></i>
+    <div class="fixed bottom-8 right-8 flex flex-col space-y-4 z-50">
+      <a href="tel:+79142706573" class="btn btn-circle btn-primary btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="Позвонить">
+        <i class="las la-phone text-2xl"></i>
       </a>
-      <a href="https://wa.me/79142706573" class="btn btn-circle btn-success btn-md lg:btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="WhatsApp">
-        <i class="lab la-whatsapp text-xl lg:text-2xl"></i>
+      <a href="https://wa.me/79142706573" class="btn btn-circle btn-success btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="WhatsApp">
+        <i class="lab la-whatsapp text-2xl"></i>
       </a>
     </div>
 
@@ -131,18 +131,23 @@ export default {
 }
 
 .btn-circle {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
   padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-@media (min-width: 1024px) {
-  .btn-circle.btn-lg {
-    width: 4rem;
-    height: 4rem;
+@media (max-width: 640px) {
+  .btn-circle {
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .fixed.bottom-8.right-8 {
+    bottom: 1rem;
+    right: 1rem;
   }
 }
 </style>
