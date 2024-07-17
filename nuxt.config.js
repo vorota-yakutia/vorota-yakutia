@@ -22,26 +22,65 @@ export default defineNuxtConfig({
   },
 
   sitemap: {
-    // Используем функцию для динамической генерации конфигурации
-    // Это позволяет нам использовать значения из site.url
-    configFunction: ({
-      sitemap,
-      nuxtConfig,
-    }) => {
-      sitemap.hostname = nuxtConfig.site.url;
-      sitemap.gzip = true; // Создаем сжатую версию sitemap
-      sitemap.lastmod = new Date(); // Устанавливаем дату последнего изменения
-      sitemap.exclude = ['/admin/**']; // Исключаем административные страницы, если они есть
-
-      // Добавляем только главную страницу, так как это одностраничный сайт
-      sitemap.routes = [
-        {
-          url: '/',
-          changefreq: 'daily',
-          priority: 1,
-        },
-      ];
-    },
+    hostname: 'https://www.vorota-yakutia.ru', // Замените на ваш реальный URL
+    gzip: true,
+    exclude: ['/admin/**'],
+    urls: [
+      {
+        loc: '/',
+        changefreq: 'daily',
+        priority: 1,
+        lastmod: new Date().toISOString(),
+        images: [
+          '/vorota/1.jpeg',
+          '/vorota/2.jpeg',
+          '/vorota/3.jpeg',
+          '/vorota/4.jpeg',
+          '/vorota/5.jpeg',
+          '/vorota/6.jpeg',
+          '/vorota/7.jpeg',
+          '/vorota/8.jpeg',
+          '/vorota/9.jpeg',
+          '/vorota/10.jpeg',
+          '/vorota/11.jpeg',
+          '/vorota/12.jpeg',
+          '/vorota/13.jpeg',
+          '/vorota/14.jpeg',
+          '/vorota/15.jpeg',
+          '/vorota/16.jpeg',
+          '/vorota/17.jpeg',
+          '/vorota/18.jpeg',
+          '/vorota/19.jpeg',
+          '/vorota/20.jpeg',
+          '/vorota/21.jpeg',
+          '/vorota/22.jpeg',
+          '/vorota/23.jpeg',
+          '/vorota/24.jpeg',
+          '/vorota/25.jpeg',
+          '/vorota/26.jpeg',
+          '/vorota/27.jpeg',
+          '/vorota/28.jpeg',
+          '/vorota/29.jpeg',
+          '/vorota/30.jpeg',
+          '/vorota/31.jpeg',
+          '/vorota/32.jpeg',
+          '/vorota/33.jpeg',
+          '/vorota/34.jpeg',
+          '/vorota/35.jpeg',
+          '/vorota/36.jpeg',
+          '/vorota/37.jpeg',
+          '/vorota/38.jpeg',
+          '/vorota/39.jpeg',
+          '/vorota/40.jpeg',
+          '/sertificat.webp',
+        ].map(path => ({
+          loc: `https://www.vorota-yakutia.ru${path}`,
+          caption: path.includes('sertificat') ? 'Сертификат Алютех' : 'Ворота Алютех в Якутске',
+          title: path.includes('sertificat') ? 'Сертификат качества Алютех' : `Пример реализованного проекта Алютех №${path.match(/\d+/)?.[0] || ''}`,
+          // Свойство license не поддерживается в этом формате, поэтому мы его убрали
+        })),
+      },
+    ],
   },
 
   robots: {
