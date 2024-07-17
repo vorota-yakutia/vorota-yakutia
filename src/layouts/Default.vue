@@ -1,24 +1,24 @@
 <template>
   <div data-theme="lofi">
-    <header class="navbar fixed bg-base-100 z-40 shadow-sm px-4">
-      <div class="navbar-start">
-        <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost p-0 md:text-xl flex items-center cursor-pointer">
+    <header class="sticky top-0 bg-base-100 z-40 shadow-md px-4 py-2">
+      <div class="container mx-auto flex justify-center md:justify-start items-center">
+        <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost p-0 flex items-center cursor-pointer">
           <img src="~/assets/images/logo.png" alt="Алютех" class="h-10 w-auto">
         </NuxtLink>
-      </div>
-      <div class="navbar-end flex items-center space-x-2 md:space-x-4">
-        <a href="tel:+79142706573" class="btn btn-outline btn-primary btn-sm md:btn-md animate-pulse">
-          <i class="las la-phone text-lg md:text-xl mr-1"></i>
-          <span class="hidden md:inline">Позвонить</span>
-        </a>
-        <a href="https://wa.me/79142706573" class="btn btn-success btn-sm md:btn-md shadow-lg hover:shadow-green-500/50 transition-all duration-300">
-          <i class="lab la-whatsapp text-lg md:text-xl mr-1"></i>
-          <span class="hidden md:inline">WhatsApp</span>
-        </a>
       </div>
     </header>
 
     <slot />
+
+    <!-- Floating contact buttons -->
+    <div class="fixed bottom-4 right-4 flex flex-col space-y-2 z-50">
+      <a href="tel:+79142706573" class="btn btn-circle btn-primary btn-md lg:btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="Позвонить">
+        <i class="las la-phone text-xl lg:text-2xl"></i>
+      </a>
+      <a href="https://wa.me/79142706573" class="btn btn-circle btn-success btn-md lg:btn-lg tooltip tooltip-left flex items-center justify-center" data-tip="WhatsApp">
+        <i class="lab la-whatsapp text-xl lg:text-2xl"></i>
+      </a>
+    </div>
 
     <footer class="footer p-10 bg-base-200 text-base-content">
       <div>
@@ -128,5 +128,21 @@ export default {
 
 .btn-success {
   animation: glow 2s infinite;
+}
+
+.btn-circle {
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
+  .btn-circle.btn-lg {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 </style>
