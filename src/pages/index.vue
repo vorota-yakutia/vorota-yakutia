@@ -1,14 +1,13 @@
 <template>
-
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
     <div class="hero-content text-center">
       <div class="max-w-xl">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
-          Профессиональный монтаж ворот в Якутске
+          Алютех - Ворота Якутска и Якутии
         </h1>
         <p class="text-white md:text-lg mb-6">
           Эксперты в установке автоматических ворот, роллетных конструкций, шлагбаумов и погрузочно-разгрузочного
-          оборудования. Компания «АЛЮТЕХ» - ваш надежный партнер в сфере бытовых и промышленных решений. Гарантируем
+          оборудования в Якутске и по всей Якутии. Компания «АЛЮТЕХ» - ваш надежный партнер в сфере бытовых и промышленных решений. Гарантируем
           безупречное качество каждого изделия благодаря тщательной проверке на всех этапах производства.
         </p>
         <div class="flex justify-center space-x-5">
@@ -25,7 +24,7 @@
   <div id="works-section">
     <generic-panel>
       <div class="flex flex-col p-6">
-        <h1 class="text-3xl md:text-3xl mb-5">Галерея выполненных проектов</h1>
+        <h2 class="text-3xl md:text-3xl mb-5">Галерея выполненных проектов</h2>
       </div>
     </generic-panel>
     <div class="carousel w-full space-x-4">
@@ -37,7 +36,7 @@
             format="webp"
             fit="cover"
             loading="lazy"
-            :alt="`Реализованный проект ${image}`"
+            :alt="`Реализованный проект ${image} - Ворота Алютех в Якутске`"
             placeholder
             quality="80"
         />
@@ -46,10 +45,10 @@
   </div>
   <generic-panel>
     <div id="price-section" class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl mb-5">Рассчитать стоимость монтажа ворот ALUTECH</h1>
+      <h2 class="text-3xl mb-5">Рассчитать стоимость монтажа ворот ALUTECH в Якутске</h2>
 
       <div class="mb-4">
-        <h2 class="mb-2">Услуги по установке</h2>
+        <h3 class="mb-2">Услуги по установке</h3>
         <div class="flex flex-col space-y-2">
           <label class="flex items-center">
             <input type="radio" name="installation" value="yes" class="radio radio-primary" checked/>
@@ -83,11 +82,17 @@
 
   <generic-panel>
     <div class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
-      <h1 class="text-3xl mb-5">Наше расположение</h1>
+      <h2 class="text-3xl mb-5">Наше расположение в Якутске</h2>
       <div id="map" class="w-full h-64"></div>
     </div>
   </generic-panel>
 
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto text-center">
+      <p class="mb-4">Алютех - ведущий поставщик ворот в Якутске и Якутии. Мы предлагаем широкий ассортимент автоматических ворот, роллетных систем и шлагбаумов для жилых и коммерческих объектов.</p>
+      <p>© 2024 Алютех - Ворота Якутии. Все права защищены.</p>
+    </div>
+  </footer>
 </template>
 
 <script setup>
@@ -96,23 +101,23 @@ import { useServerSeoMeta, useSeoMeta, useHead } from '#imports';
 import GenericPanel from '~/components/commons/GenericPanel';
 import ogBanner from '../assets/images/logo.png';
 
-const siteName = 'Официальный представитель АЛЮТЕХ в Якутске';
+const siteName = 'Алютех - Ворота Якутии';
 const siteUrl = 'https://www.vorota-yakutia.ru';
-const pageTitle = 'Ворота в Якутске - Инновационные решения для вашего комфорта';
-const pageDescription = 'Ведущий поставщик автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования в Якутске. «АЛЮТЕХ» - гарант качества и инноваций для бытового и промышленного применения.';
+const pageTitle = 'Ворота Якутск | Алютех - Ворота Якутии';
+const pageDescription = 'Алютех - ведущий поставщик и установщик ворот в Якутске и Якутии. Автоматические ворота, роллетные системы, шлагбаумы от официального представителя. Качество и надежность для вашего дома и бизнеса.';
 
 useServerSeoMeta({
   title: () => `${pageTitle} | ${siteName}`,
   ogTitle: () => `${pageTitle} | ${siteName}`,
   description: pageDescription,
-  ogDescription: 'Профессиональная установка автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования от АЛЮТЕХ в Якутске. Качество, проверенное временем.',
+  ogDescription: pageDescription,
+  ogSiteName: siteName,
   ogImage: ogBanner,
   twitterCard: 'summary_large_image',
   twitterTitle: () => `${pageTitle} | ${siteName}`,
-  twitterDescription: 'Профессиональная установка автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования от АЛЮТЕХ в Якутске. Качество, проверенное временем.',
+  twitterDescription: pageDescription,
   twitterImage: ogBanner,
 });
-
 useSeoMeta({
   charset: 'utf-8',
   viewport: 'width=device-width, initial-scale=1',
@@ -133,7 +138,7 @@ useHead({
       children: JSON.stringify({
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
-        name: 'Официальный представитель АЛЮТЕХ в Якутске',
+        name: 'Алютех - Ворота Якутии',
         image: `${siteUrl}/assets/images/logo.png`,
         telephone: '+79142706573',
         address: {
@@ -144,7 +149,7 @@ useHead({
         },
         url: siteUrl,
         priceRange: '₽₽₽',
-        description: 'Профессиональная установка и обслуживание автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования в Якутске.',
+        description: 'Профессиональная установка и обслуживание автоматических ворот, роллетных систем, шлагбаумов и перегрузочного оборудования в Якутске и Якутии. Официальный представитель Алютех.',
       }),
     },
   ],
@@ -183,7 +188,7 @@ onMounted(() => {
               center: [62.057323, 129.735834],
               zoom: 14.3,
             });
-            DG.marker([62.057323, 129.735834]).addTo(map).bindLabel('Алютех', {
+            DG.marker([62.057323, 129.735834]).addTo(map).bindLabel('Алютех - Ворота Якутии', {
               static: true,
             });
           });
@@ -219,7 +224,6 @@ onUnmounted(() => {
   }
 });
 </script>
-
 
 <style scoped>
 #map {
