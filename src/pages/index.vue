@@ -34,28 +34,52 @@
       </div>
     </div>
   </div>
-  <div id="works-section">
-    <generic-panel>
-      <div class="flex flex-col p-6">
-        <h2 class="text-3xl md:text-3xl mb-5">Галерея выполненных проектов</h2>
+  <section id="works-section" aria-labelledby="gallery-title" class="py-12">
+    <div class="container mx-auto px-4">
+      <h2 id="gallery-title" class="text-3xl font-bold mb-8 text-center">Галерея выполненных проектов</h2>
+
+      <div class="relative">
+        <div class="carousel" ref="carousel">
+          <div v-for="image in visibleImages" :key="image" class="carousel-item">
+            <div class="relative overflow-hidden rounded-lg shadow-lg h-64 md:h-96">
+              <nuxt-img
+                  :src="`/vorota/${image}.jpeg`"
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  :sizes="imageSizes"
+                  format="webp"
+                  loading="lazy"
+                  :alt="`Реализованный проект ${image} - Ворота Алютех в Якутске`"
+                  placeholder
+                  quality="80"
+              />
+              <div class="absolute inset-0 bg-black bg-opacity-40 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <button @click="openLightbox(image)" class="btn btn-primary" aria-label="Увеличить изображение">
+                  <i class="las la-search-plus text-xl"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button @click="scrollCarousel('prev')" class="absolute left-2 top-1/2 transform -translate-y-1/2 btn btn-circle btn-primary" aria-label="Предыдущее изображение">❮</button>
+        <button @click="scrollCarousel('next')" class="absolute right-2 top-1/2 transform -translate-y-1/2 btn btn-circle btn-primary" aria-label="Следующее изображение">❯</button>
       </div>
-    </generic-panel>
-    <div class="carousel w-full space-x-4">
-      <div v-for="image in visibleImages" :key="image" class="carousel-item">
-        <nuxt-img
-            :src="`/vorota/${image}.jpeg`"
-            class="rounded-box max-w-full h-96 object-cover"
-            :sizes="imageSizes"
-            format="webp"
-            fit="cover"
-            loading="lazy"
-            :alt="`Реализованный проект ${image} - Ворота Алютех в Якутске`"
-            placeholder
-            quality="80"
-        />
+
+      <div class="flex justify-center mt-4">
+        <div v-for="i in 3" :key="i"
+             @click="scrollToImage((i - 1) * Math.floor(visibleImages.length / 3))"
+             class="w-3 h-3 rounded-full mx-1 cursor-pointer"
+             :class="getActiveDotClass(i)">
+        </div>
       </div>
     </div>
-  </div>
+
+    <!-- Lightbox -->
+    <div v-if="lightboxOpen" class="fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center" @click="closeLightbox">
+      <img :src="`/vorota/${lightboxImage}.jpeg`" class="max-w-full max-h-full object-contain" :alt="`Увеличенное изображение проекта ${lightboxImage}`" />
+    </div>
+  </section>
+
   <generic-panel>
     <div id="price-section" class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
       <h2 class="text-3xl mb-5">Рассчитать стоимость монтажа ворот ALUTECH в Якутске</h2>
@@ -262,23 +286,83 @@ useHead({
     },
   ],
 });
+const carousel = ref(null);
 const allImages = ref(Array.from({ length: 40 }, (_, i) => i + 1));
-const visibleImages = ref(allImages.value.slice(0, 10)); // Изначально загружаем только 10 изображений
-const lastLoadedIndex = ref(9);
+const visibleImages = ref(allImages.value.slice(0, 6));
+const lastLoadedIndex = ref(5);
+const lightboxOpen = ref(false);
+const lightboxImage = ref(null);
+const currentImageIndex = ref(0);
 
 const imageSizes = computed(() => ({
   sm: '100vw',
   md: '50vw',
-  lg: '400px',
-  xl: '500px',
-  '2xl': '600px',
+  lg: '33vw',
+  xl: '25vw',
 }));
 
 const loadMoreImages = () => {
+  if (lastLoadedIndex.value >= allImages.value.length - 1) return;
   const nextIndex = lastLoadedIndex.value + 1;
-  if (nextIndex < allImages.value.length) {
-    visibleImages.value.push(...allImages.value.slice(nextIndex, nextIndex + 5));
-    lastLoadedIndex.value = nextIndex + 4;
+  const newImages = allImages.value.slice(nextIndex, nextIndex + 3);
+  visibleImages.value.push(...newImages);
+  lastLoadedIndex.value = Math.min(nextIndex + 2, allImages.value.length - 1);
+};
+
+const openLightbox = (image) => {
+  lightboxImage.value = image;
+  lightboxOpen.value = true;
+};
+
+const closeLightbox = () => {
+  lightboxOpen.value = false;
+};
+
+const getActiveDotClass = (dotIndex) => {
+  const imageIndex = currentImageIndex.value;
+  const totalImages = visibleImages.value.length;
+  const thirdOfTotal = Math.floor(totalImages / 3);
+
+  if (dotIndex === 1 && imageIndex < thirdOfTotal) {
+    return 'bg-primary';
+  } else if (dotIndex === 2 && imageIndex >= thirdOfTotal && imageIndex < 2 * thirdOfTotal) {
+    return 'bg-primary';
+  } else if (dotIndex === 3 && imageIndex >= 2 * thirdOfTotal) {
+    return 'bg-primary';
+  } else {
+    return 'bg-gray-300';
+  }
+};
+
+const scrollToImage = (index) => {
+  if (!carousel.value) return;
+  const targetIndex = Math.min(index, visibleImages.value.length - 1);
+  carousel.value.scrollLeft = targetIndex * carousel.value.clientWidth;
+  currentImageIndex.value = targetIndex;
+
+  if (targetIndex >= visibleImages.value.length - 3) {
+    loadMoreImages();
+  }
+};
+
+const scrollCarousel = (direction) => {
+  if (!carousel.value) return;
+
+  const scrollAmount = carousel.value.clientWidth;
+  if (direction === 'next') {
+    if (currentImageIndex.value < visibleImages.value.length - 1) {
+      carousel.value.scrollLeft += scrollAmount;
+      currentImageIndex.value++;
+    }
+  } else {
+    if (currentImageIndex.value > 0) {
+      carousel.value.scrollLeft -= scrollAmount;
+      currentImageIndex.value--;
+    }
+  }
+
+  if (direction === 'next' && currentImageIndex.value >= visibleImages.value.length - 3) {
+    loadMoreImages();
   }
 };
 
@@ -310,7 +394,6 @@ onMounted(() => {
   imageObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
       loadMoreImages();
-      // Re-observe the last image
       const lastImage = document.querySelector('#works-section .carousel-item:last-child');
       if (lastImage) {
         imageObserver.unobserve(entries[0].target);
@@ -354,6 +437,25 @@ onUnmounted(() => {
   }
   .space-y-3 {
     margin-right: 1rem;
+  }
+}
+
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 640px) {
+  .carousel-item {
+    flex: 0 0 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 33.333333%;
   }
 }
 </style>
