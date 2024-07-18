@@ -3,19 +3,18 @@
     <div class="hero-content text-center">
       <div class="max-w-xl">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
-          Официальный представитель Алютех в Якутске: Купить ворота по выгодной цене
+          Торгово-монтажная компания - Официальный дилер Алютех в Якутске
         </h1>
         <p class="text-white md:text-lg mb-6">
-          Мы - эксперты в установке автоматических ворот, роллетных конструкций и шлагбаумов Алютех в Якутске.
-          Как официальный представитель «АЛЮТЕХ», мы гарантируем высокое качество продукции и услуг.
-          Узнайте цены на ворота и монтаж уже сегодня!
+          Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.
+          Низкие цены, гарантия 2 года, сертифицированные монтажники. Узнайте стоимость уже сегодня!
         </p>
         <div class="flex justify-center space-x-5">
           <a class="btn btn-sm md:btn-md btn-primary" href="#price-section">
-            Узнать стоимость
+            Бесплатный замер
           </a>
           <a class="btn btn-sm md:btn-md bg-base-100" href="#works-section">
-            Портфолио проектов
+            Наши работы
           </a>
         </div>
       </div>
@@ -110,10 +109,10 @@ import { useServerSeoMeta, useSeoMeta, useHead } from '#imports';
 import GenericPanel from '~/components/commons/GenericPanel';
 import ogBanner from '../assets/images/logo.png';
 
-const siteName = 'Официальный представитель Алютех в Якутске';
+const siteName = 'Торгово-монтажная компания - Официальный дилер Алютех в Якутске';
 const siteUrl = 'https://www.vorota-yakutia.ru';
-const pageTitle = 'Купить ворота Алютех в Якутске | Цены от официального представителя';
-const pageDescription = 'Официальный представитель Алютех в Якутске. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов. Узнайте цены и купите качественные ворота от производителя.';
+const pageTitle = 'Купить ворота Алютех в Якутске | Цены от официального дилера';
+const pageDescription = 'Официальный дилер Алютех в Якутске. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов. Гарантия 2 года, низкие цены, сертифицированные монтажники. Бесплатный замер!';
 
 useServerSeoMeta({
   title: () => `${pageTitle} | ${siteName}`,
@@ -152,32 +151,103 @@ useHead({
   script: [
     {
       type: 'application/ld+json',
-      children: JSON.stringify({
-        '@context': 'https://schema.org',
-        '@type': 'LocalBusiness',
-        name: 'Официальный представитель Алютех в Якутске',
-        image: `${siteUrl}/assets/images/logo.png`,
-        telephone: '+79142706573',
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Якутск',
-          addressRegion: 'Республика Саха (Якутия)',
-          addressCountry: 'RU',
+      children: JSON.stringify([
+        {
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'Торгово-монтажная компания - Официальный дилер Алютех в Якутске',
+          url: 'https://www.vorota-yakutia.ru/',
         },
-        areaServed: [
-          {
-            '@type': 'City',
-            name: 'Якутск',
+        {
+          '@context': 'https://schema.org',
+          '@type': 'LocalBusiness',
+          name: 'Торгово-монтажная компания - Официальный дилер Алютех в Якутске',
+          image: `${siteUrl}/assets/images/logo.png`,
+          telephone: '+79142706573',
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Якутск',
+            addressRegion: 'Республика Саха (Якутия)',
+            addressCountry: 'RU',
           },
-        ],
-        url: siteUrl,
-        priceRange: '₽₽₽',
-        description: 'Официальный представитель Алютех в Якутске. Профессиональная продажа, установка и обслуживание автоматических ворот, роллетных систем и шлагбаумов. Выгодные цены на продукцию и монтаж.',
-      }),
+          areaServed: [
+            {
+              '@type': 'State',
+              name: 'Республика Саха (Якутия)',
+            },
+          ],
+          url: siteUrl,
+          priceRange: '₽₽₽',
+          description: 'Официальный дилер Алютех в Якутске. Продажа, установка и обслуживание автоматических ворот, роллетных систем и шлагбаумов. Гарантия 2 года, низкие цены, сертифицированные монтажники.',
+          hasOfferCatalog: {
+            '@type': 'OfferCatalog',
+            name: 'Продукция Алютех',
+            itemListElement: [
+              {
+                '@type': 'OfferCatalog',
+                name: 'Автоматические секционные ворота',
+              },
+              {
+                '@type': 'OfferCatalog',
+                name: 'Откатные ворота',
+              },
+              {
+                '@type': 'OfferCatalog',
+                name: 'Промышленные ворота',
+              },
+              {
+                '@type': 'OfferCatalog',
+                name: 'Автоматика для ворот',
+              },
+              {
+                '@type': 'OfferCatalog',
+                name: 'Рольставни',
+              },
+              {
+                '@type': 'OfferCatalog',
+                name: 'Перегородки',
+              },
+            ],
+          },
+          serviceArea: {
+            '@type': 'State',
+            name: 'Республика Саха (Якутия)',
+          },
+          makesOffer: [
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Бесплатный замер',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Монтаж',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Обслуживание',
+              },
+            },
+            {
+              '@type': 'Offer',
+              itemOffered: {
+                '@type': 'Service',
+                name: 'Ремонт',
+              },
+            },
+          ],
+        },
+      ]),
     },
   ],
 });
-
 const allImages = ref(Array.from({ length: 40 }, (_, i) => i + 1));
 const visibleImages = ref(allImages.value.slice(0, 10)); // Изначально загружаем только 10 изображений
 const lastLoadedIndex = ref(9);
