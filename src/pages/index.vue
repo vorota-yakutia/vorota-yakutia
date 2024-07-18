@@ -367,4 +367,11 @@ onUnmounted(() => {
     color: black;
   }
 }
+
+.btn-white {
+  @apply text-white border-white;
+}
+.btn-white:hover {
+  @apply bg-white text-blue-900;
+}
 </style>
