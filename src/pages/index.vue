@@ -1,35 +1,6 @@
 <template>
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
     <div class="hero-content text-center">
-      <!-- Мобильная версия -->
-      <div class="max-w-xs md:hidden">
-        <h1 class="text-sm text-white font-semibold mb-2">
-          Торгово-монтажная компания
-        </h1>
-        <h2 class="text-lg text-white font-bold mb-2">
-          Официальный дилер Алютех в Якутске
-        </h2>
-        <h3 class="text-3xl text-white font-bold mb-4">
-          Купить ворота<br>
-          по выгодной цене
-        </h3>
-        <p class="text-white text-sm mb-4">
-          Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.
-        </p>
-        <ul class="text-white text-sm mb-6 list-disc list-inside">
-          <li>Низкие цены</li>
-          <li>Гарантия 2 года</li>
-          <li>Сертифицированные монтажники</li>
-        </ul>
-        <div class="flex flex-col space-y-3">
-          <a class="btn btn-primary btn-sm" href="#price-section">
-            Рассчитать стоимость
-          </a>
-          <a class="btn btn-outline btn-sm btn-white" href="#works-section">
-            Смотреть портфолио
-          </a>
-        </div>
-      </div>
       <!-- Десктопная версия -->
       <div class="max-w-xl hidden md:block">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
@@ -41,7 +12,7 @@
         </p>
         <div class="flex justify-center space-x-5">
           <a class="btn btn-sm md:btn-md btn-primary" href="#price-section">
-            Бесплатный замер
+            Рассчитать стоимость
           </a>
           <a class="btn btn-sm md:btn-md bg-base-100" href="#works-section">
             Наши работы
@@ -354,24 +325,4 @@ onUnmounted(() => {
   height: 400px;
 }
 
-@media (max-width: 768px) {
-  .hero-content {
-    padding: 1rem;
-  }
-  .btn-outline.btn-white {
-    color: white;
-    border-color: white;
-  }
-  .btn-outline.btn-white:hover {
-    background-color: white;
-    color: black;
-  }
-}
-
-.btn-white {
-  @apply text-white border-white;
-}
-.btn-white:hover {
-  @apply bg-white text-blue-900;
-}
 </style>
