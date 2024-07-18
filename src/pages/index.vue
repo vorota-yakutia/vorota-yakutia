@@ -2,7 +2,7 @@
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
     <div class="hero-content text-center">
       <!-- Десктопная версия -->
-      <div class="max-w-xl hidden md:block">
+      <div class="max-w-xl">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
           Торгово-монтажная компания - Официальный дилер Алютех в Якутске
         </h1>
