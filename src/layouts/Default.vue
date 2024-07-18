@@ -3,7 +3,7 @@
     <header class="sticky top-0 bg-base-100 z-40 shadow-md px-4 py-2">
       <div class="container mx-auto flex justify-center md:justify-start items-center">
         <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost p-0 flex items-center cursor-pointer">
-          <img src="~/assets/images/logo.png" alt="Ворота в Якутске" class="h-10 w-auto mr-2">
+          <img src="~/assets/images/logo.png" alt="Ворота в Якутске - Алютех" class="h-10 w-auto mr-2">
         </NuxtLink>
       </div>
     </header>
