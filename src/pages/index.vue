@@ -3,9 +3,9 @@
     <div class="hero-content text-center">
       <!-- Мобильная версия -->
       <div class="max-w-xl md:hidden">
-        <h5 class="text-xl text-white font-bold mb-4">
+        <h1 class="text-xl text-white font-bold mb-4">
           Торгово-монтажная компания - Официальный дилер Алютех в Якутске
-        </h5>
+        </h1>
         <h2 class="text-4xl text-white font-bold mb-4">
           Купить ворота<br>
           по выгодной цене
