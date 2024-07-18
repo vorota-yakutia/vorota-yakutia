@@ -1,20 +1,20 @@
 <template>
-  <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
-    <div class="hero-content text-center">
-      <!-- Десктопная версия -->
-      <div class="max-w-xl">
-        <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
+  <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center relative">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="hero-content text-left relative z-10 container mx-auto px-4 pt-16 md:pt-24">
+      <div class="max-w-xl mx-auto md:mx-0">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-4 md:mb-6">
           Торгово-монтажная компания - Официальный дилер Алютех в Якутске
         </h1>
-        <p class="text-white md:text-lg mb-6">
+        <p class="text-white text-sm md:text-base lg:text-lg mb-6">
           Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.
           Низкие цены, гарантия 2 года, сертифицированные монтажники. Узнайте стоимость уже сегодня!
         </p>
-        <div class="flex justify-center space-x-5">
-          <a class="btn btn-sm md:btn-md btn-primary" href="#price-section">
+        <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-5">
+          <a class="btn btn-primary" href="#price-section">
             Рассчитать стоимость
           </a>
-          <a class="btn btn-sm md:btn-md bg-base-100" href="#works-section">
+          <a class="btn bg-white text-primary hover:bg-primary hover:text-white" href="#works-section">
             Наши работы
           </a>
         </div>
@@ -325,4 +325,12 @@ onUnmounted(() => {
   height: 400px;
 }
 
+@media (max-width: 640px) {
+  .hero-content {
+    padding-top: 4rem;
+  }
+  .btn {
+    width: 100%;
+  }
+}
 </style>
