@@ -1,16 +1,15 @@
 <template>
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
-    <div class="hero-content text-center">
-      <!-- Десктопная версия -->
-      <div class="max-w-xl hidden md:block">
-        <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
+    <div class="hero-content text-center px-4 py-6">
+      <div class="max-w-xl">
+        <h1 class="text-3xl md:text-5xl text-white font-bold mb-4 md:mb-6">
           Торгово-монтажная компания - Официальный дилер Алютех в Якутске
         </h1>
-        <p class="text-white md:text-lg mb-6">
+        <p class="text-white text-sm md:text-lg mb-4 md:mb-6">
           Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.
           Низкие цены, гарантия 2 года, сертифицированные монтажники. Узнайте стоимость уже сегодня!
         </p>
-        <div class="flex justify-center space-x-5">
+        <div class="flex flex-col md:flex-row justify-center space-y-3 md:space-y-0 md:space-x-5">
           <a class="btn btn-sm md:btn-md btn-primary" href="#price-section">
             Рассчитать стоимость
           </a>
@@ -325,4 +324,13 @@ onUnmounted(() => {
   height: 400px;
 }
 
+@media (max-width: 768px) {
+  .hero-content {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  .btn {
+    width: 100%;
+  }
+}
 </style>
