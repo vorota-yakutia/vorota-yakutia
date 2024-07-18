@@ -1,7 +1,33 @@
 <template>
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
     <div class="hero-content text-center">
-      <div class="max-w-xl">
+      <!-- Мобильная версия -->
+      <div class="max-w-xl md:hidden">
+        <h1 class="text-3xl text-white font-bold mb-4">
+          Торгово-монтажная компания - Официальный дилер Алютех в Якутске
+        </h1>
+        <h2 class="text-4xl text-white font-bold mb-4">
+          Купить ворота<br>
+          по выгодной цене
+        </h2>
+        <p class="text-white text-lg mb-6">
+          Мы — эксперты в установке автоматических ворот, роллетных конструкций и шлагбаумов Алютех в Якутске.
+        </p>
+        <p class="text-white text-lg mb-6">
+          Как официальный дилер «АЛЮТЕХ», мы гарантируем высокое качество продукции и услуг. Узнайте цены на ворота и монтаж уже сегодня!
+        </p>
+        <div class="flex flex-col space-y-4">
+          <a class="btn btn-primary" href="#price-section">
+            Рассчитать стоимость
+          </a>
+          <a class="btn btn-outline btn-white" href="#works-section">
+            Смотреть портфолио
+          </a>
+        </div>
+      </div>
+
+      <!-- Десктопная версия -->
+      <div class="max-w-xl hidden md:block">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
           Торгово-монтажная компания - Официальный дилер Алютех в Якутске
         </h1>
@@ -322,5 +348,19 @@ onUnmounted(() => {
 #map {
   width: 100%;
   height: 400px;
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 1rem;
+  }
+  .btn-outline.btn-white {
+    color: white;
+    border-color: white;
+  }
+  .btn-outline.btn-white:hover {
+    background-color: white;
+    color: black;
+  }
 }
 </style>
