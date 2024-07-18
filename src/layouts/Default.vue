@@ -5,7 +5,7 @@
         <NuxtLink to="/" @click.native="scrollToTop" class="btn btn-ghost p-0 flex items-center cursor-pointer">
           <img src="~/assets/images/logo.png" alt="Ворота в Якутске" class="h-10 w-auto mr-2">
           <span class="text-lg font-semibold hidden md:inline">Ворота в Якутске - Алютех</span>
-          <span class="text-lg font-semibold md:hidden">Ворота в Якутске - Алютех</span>
+          <span class="text-lg font-semibold md:hidden">Ворота в Якутске</span>
         </NuxtLink>
       </div>
     </header>
