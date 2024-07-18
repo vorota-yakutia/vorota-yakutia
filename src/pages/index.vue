@@ -109,10 +109,10 @@ import { useServerSeoMeta, useSeoMeta, useHead } from '#imports';
 import GenericPanel from '~/components/commons/GenericPanel';
 import ogBanner from '../assets/images/logo.png';
 
-const siteName = 'Алютех - Ворота в Якутске и Якутии';
+const siteName = 'Алютех - Ворота в Якутске';
 const siteUrl = 'https://www.vorota-yakutia.ru';
-const pageTitle = 'Автоматические ворота в Якутске и Якутии | Алютех';
-const pageDescription = 'Алютех - ведущий поставщик и установщик автоматических ворот, роллетных систем и шлагбаумов в Якутске и Республике Саха (Якутия). Официальный представитель с гарантией качества.';
+const pageTitle = 'Автоматические ворота в Якутске  | Алютех';
+const pageDescription = 'Алютех - ведущий поставщик и установщик автоматических ворот, роллетных систем и шлагбаумов в Якутске. Официальный представитель с гарантией качества.';
 
 useServerSeoMeta({
   title: () => `${pageTitle} | ${siteName}`,
