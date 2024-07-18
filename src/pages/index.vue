@@ -1,20 +1,33 @@
 <template>
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center relative">
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-    <div class="hero-content text-left relative z-10 container mx-auto px-4 pt-16 md:pt-24">
-      <div class="max-w-xl mx-auto md:mx-0">
-        <h1 class="text-3xl md:text-4xl lg:text-5xl text-white font-bold mb-4 md:mb-6">
-          Торгово-монтажная компания - Официальный дилер Алютех в Якутске
+    <div class="absolute inset-0 bg-black opacity-60"></div>
+    <div class="hero-content relative z-10 container mx-auto px-4 py-8 md:py-16">
+      <div class="max-w-md mx-auto md:max-w-xl md:mx-0">
+        <h1 class="text-2xl md:text-4xl lg:text-5xl text-white font-bold mb-4 leading-tight">
+          Официальный дилер Алютех в Якутске
         </h1>
-        <p class="text-white text-sm md:text-base lg:text-lg mb-6">
-          Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.
-          Низкие цены, гарантия 2 года, сертифицированные монтажники. Узнайте стоимость уже сегодня!
+        <p class="text-xl md:text-2xl text-yellow-300 font-semibold mb-6">
+          Купите ворота по выгодной цене!
         </p>
-        <div class="flex flex-col sm:flex-row justify-start space-y-3 sm:space-y-0 sm:space-x-5">
-          <a class="btn btn-primary" href="#price-section">
+        <ul class="text-white text-sm md:text-base space-y-2 mb-6">
+          <li class="flex items-center">
+            <i class="las la-check-circle text-green-400 mr-2"></i>
+            Автоматические ворота и роллетные системы
+          </li>
+          <li class="flex items-center">
+            <i class="las la-check-circle text-green-400 mr-2"></i>
+            Низкие цены и гарантия 2 года
+          </li>
+          <li class="flex items-center">
+            <i class="las la-check-circle text-green-400 mr-2"></i>
+            Сертифицированные монтажники
+          </li>
+        </ul>
+        <div class="flex flex-col space-y-3">
+          <a class="btn btn-primary btn-lg w-full" href="#price-section">
             Рассчитать стоимость
           </a>
-          <a class="btn bg-white text-primary hover:bg-primary hover:text-white" href="#works-section">
+          <a class="btn btn-outline btn-lg w-full text-white border-white hover:bg-white hover:text-primary" href="#works-section">
             Наши работы
           </a>
         </div>
@@ -325,12 +338,22 @@ onUnmounted(() => {
   height: 400px;
 }
 
-@media (max-width: 640px) {
+@media (min-width: 768px) {
   .hero-content {
-    padding-top: 4rem;
+    text-align: left;
   }
   .btn {
-    width: 100%;
+    width: auto;
+  }
+  .flex-col {
+    flex-direction: row;
+  }
+  .space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .space-y-3 {
+    margin-right: 1rem;
   }
 }
 </style>
