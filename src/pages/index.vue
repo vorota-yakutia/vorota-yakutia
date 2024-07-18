@@ -2,29 +2,34 @@
   <div class="hero min-h-screen bg-hero-pattern bg-cover bg-center">
     <div class="hero-content text-center">
       <!-- Мобильная версия -->
-      <div class="max-w-xl md:hidden">
-        <h1 class="text-xl text-white font-bold mb-4">
-          Торгово-монтажная компания - Официальный дилер Алютех в Якутске
+      <div class="max-w-xs md:hidden">
+        <h1 class="text-sm text-white font-semibold mb-2">
+          Торгово-монтажная компания
         </h1>
-        <h2 class="text-4xl text-white font-bold mb-4">
+        <h2 class="text-lg text-white font-bold mb-2">
+          Официальный дилер Алютех в Якутске
+        </h2>
+        <h3 class="text-3xl text-white font-bold mb-4">
           Купить ворота<br>
           по выгодной цене
-        </h2>
-        <p class="text-white text-lg mb-6">
-          Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.</p>
-        <p class="text-white text-lg mb-6">
-          Низкие цены, гарантия 2 года, сертифицированные монтажники. Узнайте стоимость уже сегодня!
+        </h3>
+        <p class="text-white text-sm mb-4">
+          Авторизованный партнёр Alutech в Якутии. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов.
         </p>
-        <div class="flex flex-col space-y-4">
-          <a class="btn btn-primary" href="#price-section">
+        <ul class="text-white text-sm mb-6 list-disc list-inside">
+          <li>Низкие цены</li>
+          <li>Гарантия 2 года</li>
+          <li>Сертифицированные монтажники</li>
+        </ul>
+        <div class="flex flex-col space-y-3">
+          <a class="btn btn-primary btn-sm" href="#price-section">
             Рассчитать стоимость
           </a>
-          <a class="btn btn-outline btn-white" href="#works-section">
+          <a class="btn btn-outline btn-sm btn-white" href="#works-section">
             Смотреть портфолио
           </a>
         </div>
       </div>
-
       <!-- Десктопная версия -->
       <div class="max-w-xl hidden md:block">
         <h1 class="text-4xl text-white md:text-5xl font-bold mb-6">
