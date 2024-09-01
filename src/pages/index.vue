@@ -4,7 +4,7 @@
     <div class="hero-content relative z-10 container mx-auto px-4 py-8 md:py-16">
       <div class="max-w-md mx-auto md:max-w-xl md:mx-0">
         <h1 class="text-2xl md:text-4xl lg:text-5xl text-white font-bold mb-4 leading-tight">
-          Официальный дилер Алютех в Якутске
+          Купить ворота в Якутске от официального дилера Алютех
         </h1>
         <p class="text-xl md:text-2xl text-yellow-300 font-semibold mb-6">
           Купите ворота по выгодной цене!
@@ -150,11 +150,11 @@ import ogBanner from '../assets/images/logo.png';
 const siteName = 'Торгово-монтажная компания - Официальный дилер Алютех в Якутске';
 const siteUrl = 'https://www.vorota-yakutia.ru';
 const pageTitle = 'Купить ворота Алютех в Якутске | Цены от официального дилера';
-const pageDescription = 'Официальный дилер Алютех в Якутске. Продажа и установка автоматических ворот, роллетных систем и шлагбаумов. Гарантия 2 года, низкие цены, сертифицированные монтажники. Бесплатный замер!';
+const pageDescription = 'Купить ворота в Якутске от официального дилера Алютех. Автоматические ворота, роллетные системы и шлагбаумы. Гарантия 2 года, низкие цены, сертифицированные монтажники. Бесплатный замер!';
 
 useServerSeoMeta({
-  title: () => `${pageTitle} | ${siteName}`,
-  ogTitle: () => `${pageTitle} | ${siteName}`,
+  title: () => 'Купить ворота в Якутске | ТМК - Автоматические двери и ворота',
+  ogTitle: () => 'Купить ворота в Якутске | ТМК - Автоматические двери и ворота',
   description: pageDescription,
   ogDescription: pageDescription,
   ogSiteName: siteName,
@@ -193,13 +193,13 @@ useHead({
         {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'Торгово-монтажная компания - Официальный дилер Алютех в Якутске',
+          name: 'ТМК - Автоматические двери и ворота',
           url: 'https://www.vorota-yakutia.ru/',
         },
         {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
-          name: 'Торгово-монтажная компания - Официальный дилер Алютех в Якутске',
+          name: 'ТМК - Автоматические двери и ворота',
           image: `${siteUrl}/assets/images/logo.png`,
           telephone: '+79142706573',
           address: {
@@ -216,7 +216,7 @@ useHead({
           ],
           url: siteUrl,
           priceRange: '₽₽₽',
-          description: 'Официальный дилер Алютех в Якутске. Продажа, установка и обслуживание автоматических ворот, роллетных систем и шлагбаумов. Гарантия 2 года, низкие цены, сертифицированные монтажники.',
+          description: 'Купить ворота в Якутске от официального дилера Алютех. Продажа, установка и обслуживание автоматических ворот, роллетных систем и шлагбаумов. Гарантия 2 года, низкие цены, сертифицированные монтажники.',
           hasOfferCatalog: {
             '@type': 'OfferCatalog',
             name: 'Продукция Алютех',
