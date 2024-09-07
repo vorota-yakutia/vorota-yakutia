@@ -81,23 +81,23 @@
   </section>
 
   <generic-panel>
-    <div id="price-section" class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
+    <div class="bg-white rounded-lg shadow-lg p-6">
       <h2 class="text-3xl mb-5">Рассчитать стоимость монтажа ворот ALUTECH в Якутске</h2>
 
       <div class="mb-4">
         <h3 class="mb-2">Услуги по установке</h3>
-        <div class="flex flex-col space-y-2">
+        <div>
           <label class="flex items-center">
             <input type="radio" name="installation" value="yes" class="radio radio-primary" checked/>
             <span class="ml-2">Нужен расчет стоимости монтажа</span>
           </label>
+          <br>
           <label class="flex items-center">
             <input type="radio" name="installation" value="no" class="radio radio-primary"/>
             <span class="ml-2">Только поставка, без монтажа</span>
           </label>
         </div>
       </div>
-
       <div class="mb-4">
         <label for="phone" class="block mb-2">Контактный телефон *</label>
         <input type="tel" id="phone" name="phone" class="input input-bordered w-full" required/>
@@ -118,9 +118,9 @@
   </generic-panel>
 
   <generic-panel>
-    <div class="flex flex-col p-6 bg-white rounded-lg shadow-lg">
+    <div class="bg-white rounded-lg shadow-lg p-6">
       <h2 class="text-3xl mb-5">Наше расположение в Якутске</h2>
-      <div id="map" class="w-full h-64"></div>
+      <div id="map" class="w-full h-64 md:h-96"></div>
     </div>
   </generic-panel>
 
@@ -415,7 +415,7 @@ onUnmounted(() => {
 <style scoped>
 #map {
   width: 100%;
-  height: 400px;
+  height: 256px; /* 64 * 4px для соответствия классу h-64 */
 }
 
 @media (min-width: 768px) {
@@ -434,6 +434,9 @@ onUnmounted(() => {
   }
   .space-y-3 {
     margin-right: 1rem;
+  }
+  #map {
+    height: 384px; /* 96 * 4px для соответствия классу h-96 на md экранах */
   }
 }
 
