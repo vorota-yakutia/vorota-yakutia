@@ -143,7 +143,7 @@
 </template>
 
 <script setup>
-import { useServerSeoMeta, useSeoMeta, useHead } from '#imports';
+import { useSeoMeta, useHead } from '#imports';
 import GenericPanel from '~/components/commons/GenericPanel';
 import ogBanner from '../assets/images/logo.png';
 
@@ -152,7 +152,7 @@ const siteUrl = 'https://www.vorota-yakutia.ru';
 const pageTitle = 'Купить ворота Алютех в Якутске | Цены от официального дилера';
 const pageDescription = 'Купить ворота в Якутске от официального дилера Алютех. Автоматические ворота, роллетные системы и шлагбаумы. Гарантия 2 года, низкие цены, сертифицированные монтажники. Бесплатный замер!';
 
-useServerSeoMeta({
+useSeoMeta({
   title: () => 'Купить ворота в Якутске | ТМК - Автоматические двери и ворота',
   ogTitle: () => 'Купить ворота в Якутске | ТМК - Автоматические двери и ворота',
   description: pageDescription,
@@ -163,9 +163,6 @@ useServerSeoMeta({
   twitterTitle: () => `${pageTitle} | ${siteName}`,
   twitterDescription: pageDescription,
   twitterImage: ogBanner,
-});
-
-useSeoMeta({
   charset: 'utf-8',
   viewport: 'width=device-width, initial-scale=1',
   'format-detection': 'telephone=no',
