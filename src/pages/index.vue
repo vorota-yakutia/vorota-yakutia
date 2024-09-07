@@ -190,7 +190,7 @@ useHead({
         {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'ТМК - Автоматические ворота',
+          name: 'ТМК - Купить автоматические ворота',
           url: 'https://www.vorota-yakutia.ru/',
         },
         {
