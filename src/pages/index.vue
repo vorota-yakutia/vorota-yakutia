@@ -153,8 +153,8 @@ const pageTitle = 'Купить ворота Алютех в Якутске | Ц
 const pageDescription = 'Купить ворота в Якутске от официального дилера Алютех. Автоматические ворота, роллетные системы и шлагбаумы. Гарантия 2 года, низкие цены, сертифицированные монтажники. Бесплатный замер!';
 
 useSeoMeta({
-  title: () => 'Купить ворота в Якутске | ТМК - Автоматические двери и ворота',
-  ogTitle: () => 'Купить ворота в Якутске | ТМК - Автоматические двери и ворота',
+  title: () => 'Купить ворота в Якутске | ТМК - Автоматические ворота',
+  ogTitle: () => 'Купить ворота в Якутске | ТМК - Автоматические ворота',
   description: pageDescription,
   ogDescription: pageDescription,
   ogSiteName: siteName,
@@ -190,13 +190,13 @@ useHead({
         {
           '@context': 'https://schema.org',
           '@type': 'WebSite',
-          name: 'ТМК - Автоматические двери и ворота',
+          name: 'ТМК - Автоматические ворота',
           url: 'https://www.vorota-yakutia.ru/',
         },
         {
           '@context': 'https://schema.org',
           '@type': 'LocalBusiness',
-          name: 'ТМК - Автоматические двери и ворота',
+          name: 'ТМК - Автоматические ворота',
           image: `${siteUrl}/assets/images/logo.png`,
           telephone: '+79142706573',
           address: {
